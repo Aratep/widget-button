@@ -3,16 +3,33 @@ var data_config = JSON.parse(script.getAttribute('data-config'));
 
 function createButton(config) {
     var bg_color = config.bg_color || "#23869B";
+    var color = config.color || "#FFFFFF";
     var margin = config.location.margin || "margin: 100px";
-    var button_text = config.button_text || "Click Me";
+    var button_text = config.button_text || "Поддержка";
     var icon = config.icon;
+    var transform = config.location.transform || "rotate(-90deg)";
+    var left = config.location.left || "-67px";
 
-    var button = document.createElement("BUTTON");
+    var button = document.createElement("DIV");
     var t = document.createTextNode(button_text);
 
     button.style = 'background: #' + bg_color + ';'
-        + 'margin:' + margin
+        + 'color: #' + color + ';'
+        + 'transform:' + transform + ';'
+        + 'left:' + left + ';'
+        + 'min-width: 150px;'
+        + 'box-sizing: content-box;'
+        + 'text-align: center;'
+        + 'cursor: pointer;'
+        + 'position: fixed;'
+        + 'top: 45%;'
+        + 'font-size: 15px;'
+        + 'letter-spacing: 1px;'
+        + 'font-size: 16px;'
+        + 'z-index: 99999;'
+        + 'padding: 10px;'
     button.appendChild(t);
+    // button.appendChild(icon);
     button.onclick = function () {
         modal()
     }
@@ -42,11 +59,19 @@ function modal() {
         'background-color: rgb(0,0,0); ' +
         'background-color: rgba(0,0,0,0.4);';
     modal_content.style = 'background-color: #fefefe; ' +
-        // 'margin: auto; ' +
-        // 'padding: 20px; ' +
+        'height: 400px; ' +
         'border: 1px solid #888;' +
-        'width: 80%;';
-    span.style = 'float: right';
+        'width: 60%;';
+    span.style = 'float: right' +
+        'height: 25px;' +
+        'width: 25px;' +
+        'color: rgb(255, 255, 255);' +
+        'cursor: pointer;' +
+        'line-height: 25px;' +
+        'text-align: center;' +
+        'background: rgb(0, 0, 0);' +
+        'float: right;' +
+        'border-radius: 90px;';
     iframe.style = 'background: grey'
     modal_content.appendChild(span);
     modal_content.appendChild(iframe);
@@ -56,3 +81,4 @@ function modal() {
 
 
 createButton(data_config)
+
