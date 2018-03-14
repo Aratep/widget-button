@@ -3,7 +3,7 @@
     // nobody outside of your code can reach your top level variables here
     // your top level variables are not on the window object
 
-    var script = document.getElementsByTagName('script')[0];
+    var script = document.getElementById('widget_button');
     var data_config = JSON.parse(script.getAttribute('data-config'));
 
     function createButton(config) {
@@ -40,7 +40,7 @@
             + 'z-index: ' + z_index + ';'
             + 'padding: ' + padding + ';';
         icon.style = 'height: 14px;'+
-            'width: 17px;'
+            'width: 17px;';
         span.style = 'margin: 5px';
 
         span.innerHTML = button_text;
