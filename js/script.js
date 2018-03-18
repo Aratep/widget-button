@@ -19,7 +19,7 @@
         var padding = config.location.padding || '10px';
         var icon_path = config.icon;
 
-        var button = document.createElement("DIV");
+        var button = document.createElement("BUTTON");
         var icon = document.createElement("IMG");
         var span = document.createElement('SPAN')
         icon.setAttribute("src", icon_path);
@@ -36,10 +36,11 @@
             + 'top: ' + top + ';'
             + 'font-size: 15px;'
             + 'letter-spacing: 1px;'
+            + 'border: none;'
             + 'font-size: 16px;'
             + 'z-index: ' + z_index + ';'
             + 'padding: ' + padding + ';';
-        icon.style = 'height: 14px;'+
+        icon.style = 'height: 14px;' +
             'width: 17px;';
         span.style = 'margin: 5px';
 
@@ -48,23 +49,29 @@
         button.appendChild(icon);
 
         button.onclick = function () {
-            modal();
-        };
+            modal(button);
+        }
+
         document.body.appendChild(button)
     }
 
-    function modal() {
+
+    function modal(button) {
         var modal = document.createElement("DIV");
         var modal_content = document.createElement("DIV");
         var span = document.createElement("SPAN");
         var iframe = document.createElement("IFRAME");
+        iframe.src = '//localhost:3000'
 
         span.onclick = function () {
-            modal.style = 'display: none'
+            modal.style = 'display: none';
+            button.disabled = false
         }
         modal.onclick = function () {
             modal.style = 'display: none'
+            button.disabled = false
         }
+
         span.innerHTML = "&times;";
         modal.style = 'position: fixed; ' +
             'z-index: 1; ' +
@@ -78,10 +85,13 @@
             'overflow: auto;' +
             'background-color: rgb(0,0,0); ' +
             'background-color: rgba(0,0,0,0.4);';
+
         modal_content.style = 'background-color: #fefefe; ' +
             'height: 400px; ' + // 95%
             'position: relative;' +
+            'margin: auto;' +
             'width: 60%;';
+
         span.style = 'float: right' +
             'height: 25px;' +
             'width: 25px;' +
@@ -103,6 +113,8 @@
         modal_content.appendChild(iframe);
         modal.appendChild(modal_content);
         document.body.appendChild(modal)
+        button.disabled = true
+
     };
 
     createButton(data_config)
