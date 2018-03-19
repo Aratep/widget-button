@@ -61,7 +61,7 @@
         var modal_content = document.createElement("DIV");
         var span = document.createElement("SPAN");
         var iframe = document.createElement("IFRAME");
-        iframe.src = '//localhost:3000';
+        iframe.src = 'https://aratep.github.io/';
 
         span.onclick = function () {
             modal.style = 'display: none';
