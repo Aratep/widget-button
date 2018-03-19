@@ -61,14 +61,14 @@
         var modal_content = document.createElement("DIV");
         var span = document.createElement("SPAN");
         var iframe = document.createElement("IFRAME");
-        iframe.src = '//localhost:3000'
+        iframe.src = '//localhost:3000';
 
         span.onclick = function () {
             modal.style = 'display: none';
             button.disabled = false
         }
         modal.onclick = function () {
-            modal.style = 'display: none'
+            modal.style = 'display: none';
             button.disabled = false
         }
 
@@ -121,4 +121,3 @@
 
 })();
 
-//https://1001freedownloads.s3.amazonaws.com/icon/thumb/335404/Very-Basic-Help-icon.png
