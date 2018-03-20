@@ -6,7 +6,6 @@
     var script = document.getElementById('widget_button');
     var data_config = JSON.parse(script.getAttribute('data-config'));
     var data_host = script.getAttribute('data-host');
-    console.log(data_host)
 
     function createButton(config) {
         var bg_color = config.bg_color || "#23869B";
