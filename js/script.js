@@ -5,6 +5,8 @@
 
     var script = document.getElementById('widget_button');
     var data_config = JSON.parse(script.getAttribute('data-config'));
+    var data_host = script.getAttribute('data-host');
+    console.log(data_host)
 
     function createButton(config) {
         var bg_color = config.bg_color || "#23869B";
@@ -21,7 +23,7 @@
 
         var button = document.createElement("BUTTON");
         var icon = document.createElement("IMG");
-        var span = document.createElement('SPAN')
+        var span = document.createElement('SPAN');
         icon.setAttribute("src", icon_path);
 
         button.style = 'background: #' + bg_color + ';'
@@ -61,7 +63,8 @@
         var modal_content = document.createElement("DIV");
         var span = document.createElement("SPAN");
         var iframe = document.createElement("IFRAME");
-        iframe.src = 'https://aratep.github.io/';
+        // iframe.src = 'https://' + data_host;
+        iframe.src = '//localhost:3000';
 
         span.onclick = function () {
             modal.style = 'display: none';
