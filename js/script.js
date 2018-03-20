@@ -62,8 +62,8 @@
         var modal_content = document.createElement("DIV");
         var span = document.createElement("SPAN");
         var iframe = document.createElement("IFRAME");
-        iframe.src = 'https://' + data_host;
-        // iframe.src = '//localhost:3000';
+        // iframe.src = 'https://' + data_host;
+        iframe.src = '//localhost:3000';
 
         span.onclick = function () {
             modal.style = 'display: none';
