@@ -64,6 +64,8 @@
         var modal_content = document.createElement("DIV");
         var span = document.createElement("SPAN");
         var iframe = document.createElement("IFRAME");
+        var createA = document.createElement('A');
+        createA.setAttribute('href', "http://google.com");
         iframe.src = 'https://' + data_host;
         // iframe.src = '//localhost:3000';
 
