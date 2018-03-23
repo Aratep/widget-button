@@ -25,6 +25,8 @@
         var span = document.createElement('SPAN');
         icon.setAttribute("src", icon_path);
 
+        button.className = 'button';
+
         button.style = 'background: #' + bg_color + ';'
             + 'color: #' + color + ';'
             + 'transform:' + transform + ';'
@@ -73,6 +75,8 @@
             modal.style = 'display: none';
             button.disabled = false
         }
+
+        modal_content.className = 'modal-content';
 
         span.innerHTML = "&times;";
         modal.style = 'position: fixed; ' +
